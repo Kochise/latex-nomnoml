@@ -3,7 +3,7 @@ LaTeX package to interface with `nomnoml` (npm)
 
 Source : https://github.com/Kochise/latex-nomnoml
 
-![nomnoml](https://memegenerator.net/img/instances/48933296/nom-nom-n-no.jpg)
+![nomnoml-no](https://memegenerator.net/img/instances/48933296/nom-nom-n-no.jpg)
 
 ## installation
 
@@ -47,16 +47,32 @@ In your document :
 ```latex
 %\begin{nomnoml}[width]{caption}{refname}
 \begin{nomnoml}[8cm]{nomnoml caption example}{nomnomlexample}
-[<frame>Decorator pattern|
-  [<abstract>Component||+ operation()]
-  [Client] depends --> [Component]
-  [Decorator|- next: Component]
-  [Decorator] decorates -- [ConcreteComponent]
-  [Component] <:- [Decorator]
-  [Component] <:- [ConcreteComponent]
+[Pirate|eyeCount: Int|raid();pillage()|
+  [beard]--[parrot]
+  [beard]-:>[foul mouth]
 ]
+
+[<table>mischief | bawl | sing || yell | drink]
+
+[<abstract>Marauder]<:--[Pirate]
+[Pirate]- 0..7[mischief]
+[jollyness]->[Pirate]
+[jollyness]->[rum]
+[jollyness]->[singing]
+[Pirate]-> *[rum|tastiness: Int|swig()]
+[Pirate]->[singing]
+[singing]<->[rum]
+
+[<start>st]->[<state>plunder]
+[plunder]->[<choice>more loot]
+[more loot]->[st]
+[more loot] no ->[<end>e]
+
+[<actor>Sailor] - [<usecase>shiver me;timbers]
 \end{nomnoml}
 ```
+
+![smcat](https://raw.githubusercontent.com/Kochise/latex-nomnoml/master/nomnoml.png)
 
 ## options
 
